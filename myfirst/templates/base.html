@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta charset="windows-1251">
+<title>{% block title %}Сайт{% endblock %}</title>
+<link rel="shortcut icon" href="images//favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style tupe="text/css" MEDIA="screen, print">
+p.a { font-family: "TestFont2", serif }
+
+
+
+.rounded {
+counter-reset: li; 
+list-style: none; 
+font: 14px "Trebuchet MS", "Lucida Sans";
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #DAD2CA;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #8FD4C1;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}  
+.rightimg  {
+    float: right;
+    margin: 7px 0 7px 7px;
+   }
+ body {
+    background: url(https://pngriver.com/wp-content/uploads/2018/04/Download-City-PNG-Transparent-Picture.png) repeat-x 0 100% fixed, linear-gradient(to top, #5080b1, #004e8c) fixed;
+    animation: city 60s linear infinite;
+    -webkit-animation: city 15s linear infinite;
+   }
+   @keyframes city {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+   @-webkit-keyframes city {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+#yyy {
+    width: 80%;
+    min-height: 800px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+   }
+   .raz td {
+  padding: .3em 1em;  
+}
+  </style>
+
+
+
+</head> 
+ 
+<body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Тhe Аddress Вook</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="/">Главная</a>
+      <a class="p-2 text-dark" href="/book">Все адреса</a>
+      <a class="p-2 text-dark" href="/add">Создать</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="/admin">Одменка</a>
+  </div>
+
+  <p class="a">
+
+<table align="center" forder = "10" style="font-size:50" cellspacing="80"> 
+<tr>
+  <td width="30%">&nbsp;</td>
+        <td align="center"> <p>{% block content %}{% endblock %} </p><br />     
+  <td width="30%">&nbsp;</td> 
+</tr>
+ </table>
+</p>
+</body>
+
+</html>

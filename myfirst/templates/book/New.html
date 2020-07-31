@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Создать {% endblock %}
+
+{% block content %}
+Добавить пользователя в адресную книгу <br>
+<form method="post"><br>
+	{% csrf_token %}
+	{{  form.first_name  }} 
+	{{  form.second_name  }} 
+	{{  form.l_country  }} 
+	{{  form.l_city  }} 
+	{{  form.l_street  }} 
+	{{  form.phone_number  }}<br>
+	<button type="submit" class="btn btn-success">Добавить пользователя</button>
+	<span><p><font color = "red" size = "3">{{ error }}</font></p></span>
+</form>
+
+{% endblock %}

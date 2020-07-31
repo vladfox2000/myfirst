@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Пользователь {{adress.first_name}} {% endblock %}
+
+{% block content %}
+<em>{{adress.first_name}}  {{adress.second_name}}</em>
+<hr>
+<p>Пользователь {{adress.first_name}}  {{adress.second_name}}
+проживает в стране {{adress.l_country}}, в городе {{adress.l_city}} по улице {{adress.l_street}}</p>
+<p>Контактный номер телефона {{adress.phone_number}}</p>
+
+	{% if live_photo %}
+
+		{% for p in live_photo %}
+		<hr>
+			<img src ="{{ p.img.url }}" align="center" width="640px" /><br>
+			<strong>{{p.photo_des}}</strong>
+		{% endfor %}
+	{% else %}
+	<br>
+	Нет фото
+	<hr>
+
+	{% endif %}
+<br>
+<br>
+<p>Добавить фото пользователю</p>
+<form action="{% url 'book:live_photo' adress.id %}" method="POST">
+	{% csrf_token %}
+	<input type="file" name="img"><br>
+	<input type="text"  placeholder ="Описание фото" name="des"><br>
+	<button type="submit">Добавить фото</button>
+</form>
+	
+
+{% endblock %}
